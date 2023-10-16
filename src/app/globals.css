@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  background-color: #23262C;
+  height: 100vh;
+  position: relative;
+  margin-left: 1.937rem;
+  margin-right: 1.937rem;
+  margin-top: 4.375rem;
+  margin-bottom: 4.375rem;
+
+
+}
+
+@media (max-width: 376px) {
+  body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 5rem;
+
+  }
+}
