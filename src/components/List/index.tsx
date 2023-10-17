@@ -35,7 +35,7 @@ const List = ({textList}: PropsList) => {
         }}/>
         <label 
         htmlFor={textList}
-        className="text-white cursor-pointer font-light break-normal  ">
+        className={`text-white cursor-pointer font-light break-normal ${inputRef.current?.checked && "line-through"}`}>
             {textList}
         </label>
     </div>
