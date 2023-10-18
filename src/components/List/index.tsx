@@ -7,6 +7,7 @@ import { useRef } from "react"
 const List = ({textList}: PropsList) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const {setCount,ocultar} = uselistContext()
+  let checar = JSON.parse(localStorage.getItem(`${textList}`))
   
   return (
     <div 
@@ -26,6 +27,14 @@ const List = ({textList}: PropsList) => {
         bg-no-repeat  bg-center bg-[length:0.8rem_0.8rem]
         `}
         ref={inputRef}
+        checked={checar || ""}
+        onChange={() => {
+          if(inputRef.current?.checked) {
+            localStorage.setItem(`${textList}`, "true")
+          }else {
+            localStorage.setItem(`${textList}`, "false")
+          }
+        }}
         onClick={() => {
           if(inputRef.current?.checked) {
             setCount((current:number) => current + 1)
@@ -35,7 +44,7 @@ const List = ({textList}: PropsList) => {
         }}/>
         <label 
         htmlFor={textList}
-        className={`text-white cursor-pointer font-light break-normal ${inputRef.current?.checked && "line-through"}`}>
+        className={`text-white cursor-pointer font-light break-normal inline ${inputRef.current?.checked && "line-through"}`}>
             {textList}
         </label>
     </div>

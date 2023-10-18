@@ -11,12 +11,13 @@ export default function Home () {
   
   return (
     
-    <main className="">
-      <Header/>
-      <Ocultar/>
-      {todoList.map((list: string) => (<List textList={list} key={list}/>))}
-      <NewNote/>
-      
-    </main>
+  <main className="">
+    <Header/>
+    <Ocultar/>
+    {todoList.map((list: string) => (<List textList={list} key={list}/>))}
+    <NewNote/>
+    
+  </main>
   )
 }
+

@@ -1,3 +1,4 @@
+"use client"
 import { uselistContext } from "@/context/ListContext"
 import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 

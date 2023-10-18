@@ -5,12 +5,13 @@ const ListContext = createContext<null | any >(null)
 ListContext.displayName = "List"
 
 export default function ListContextProvider({children}: {children:React.ReactNode}) {
-    const [task, setTask] = useState("")
-    const [todoList, setTodoList] = useState([])
+
     const [count, setCount] = useState(0)
     const [ocultar, setOcultar] = useState("Ocultar Concluídos")
+    const [todoList, setTodoList] = useState([])
+    const [task, setTask] = useState()
     return (
-        <ListContext.Provider value={{task, setTask, todoList, setTodoList, count, setCount, ocultar, setOcultar }}>
+        <ListContext.Provider value={{ count, setCount, ocultar, setOcultar, todoList, setTodoList, task, setTask }}>
             {children}
         </ListContext.Provider>
     )
@@ -18,10 +19,10 @@ export default function ListContextProvider({children}: {children:React.ReactNod
 
 export function uselistContext() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {task, setTask, todoList, setTodoList, count, setCount, ocultar, setOcultar} = useContext(ListContext)
+    const { count, setCount, ocultar, setOcultar, todoList, setTodoList, task, setTask} = useContext(ListContext)
 
     return {
-        task, setTask, todoList, setTodoList, count, setCount, ocultar, setOcultar
+        count, setCount, ocultar, setOcultar, todoList, setTodoList, task, setTask
     }
     
 }
