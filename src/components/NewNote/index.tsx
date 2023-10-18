@@ -8,7 +8,7 @@ const NewNote = () => {
 
   useEffect(() => {
     const todoLocalStorage = JSON.parse(localStorage.getItem("tarefas")) ?? [] 
-    return () => setTodoList(todoLocalStorage)
+     setTodoList(todoLocalStorage)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
